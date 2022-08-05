@@ -1,0 +1,57 @@
+.ant-message,
+.ant-message-notice,
+.ant-message-notice-content {
+  margin-top: 20px;
+  z-index: 1000000;
+}
+
+.entire,
+.display {
+  background: #173038;
+  border: 3px solid #baee9e;
+}
+
+.reserved {
+  background: #391b21 !important;
+  border: 3px solid #f3b65f !important;
+}
+
+.empty {
+  background: #162238 !important;
+  border: 3px solid #f3adad !important;
+}
+
+.date {
+  background: #33283c;
+  border: 3px solid #f6c5ea;
+}
+
+.countdown {
+  background: #2e2e39;
+  border: 3px solid #90e2d0;
+}
+
+.deleted {
+  background: #1c1c1c !important;
+  border: none !important;
+}
+
+.entireText {
+  color: #baee9e !important;
+}
+
+.reservedText {
+  color: #f3b65f !important;
+}
+
+.emptyText {
+  color: #f3adad !important;
+}
+
+.dateText {
+  color: #f6c5ea !important;
+}
+
+.countdownText {
+  color: #90e2d0 !important;
+}

@@ -1,0 +1,145 @@
+.desktop-detail {
+  padding: 24px;
+  background: #ffffff;
+  min-height: calc(100vh - 248px);
+
+  &___header {
+    margin-bottom: 20px;
+
+    &___content {
+      display: flex;
+      justify-content: space-between;
+
+      &___left {
+        &___bottom {
+          margin-top: 20px;
+        }
+      }
+
+      &___right {
+        &___top {
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-start;
+          width: 460px;
+          padding-top: 5px;
+        }
+
+        &___bottom {
+          margin-top: 15px;
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+
+  &___body {
+    display: flex;
+
+    &___left {
+      width: 220px !important;
+      padding-right: 13px;
+
+      &___title {
+        font-size: 30px;
+        color: #000000;
+        font-weight: 700;
+      }
+
+      &___description {
+        font-size: 14px;
+        color: #313132;
+        word-break: keep-all;
+        margin-bottom: 10px;
+      }
+
+      &___divider {
+        margin: 12px 0 !important;
+      }
+    }
+
+    &___divider {
+      height: 600px !important;
+    }
+
+    &___right {
+      width: calc(100% - 250px) !important;
+      margin: auto;
+    }
+  }
+
+  .ant-empty {
+    min-height: calc(100vh - 482px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.page-title {
+  font-size: 12px;
+  color: #313132;
+}
+
+.overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: calc(100vw - 510px);
+}
+
+.controll {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+
+  &___action {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+
+    &___text {
+      margin-right: 10px;
+      font-weight: 600;
+    }
+
+    &___switch {
+      z-index: 1;
+    }
+  }
+}
+
+.key {
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+}
+
+.card {
+  margin-left: 10px;
+  padding: 7px;
+  border-radius: 10px;
+  height: 70px;
+}
+
+.search-form {
+  display: flex;
+  width: 207px !important;
+
+  &___input {
+    width: 152px !important;
+  }
+
+  &___button {
+    width: 55px !important;
+  }
+}

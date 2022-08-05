@@ -1,0 +1,63 @@
+.desktop-header {
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  height: 48px !important;
+  color: #000000d9;
+  line-height: 48px;
+  background: #313132 !important;
+  padding: 0 !important;
+  z-index: 10000;
+
+  &___left {
+    display: flex;
+
+    &___title {
+      width: max-content;
+      height: 32px;
+      margin: 8px 24px;
+      padding: 0;
+      color: #ffffff;
+      background: #313132;
+      text-align: center;
+      line-height: 32px;
+      font-size: 18px;
+      font-weight: 700;
+      border: none !important;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &___menu {
+      width: 70px;
+      height: 48px;
+      color: #ffffffa6;
+      background: #313132;
+      border: none;
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &___right {
+    display: flex;
+    align-items: center;
+    // width: 48px;
+    margin-right: 9px;
+  }
+}
+
+.ant-menu-item {
+  padding: 0 20px;
+}
+
+.full-screen-header {
+  display: none;
+}

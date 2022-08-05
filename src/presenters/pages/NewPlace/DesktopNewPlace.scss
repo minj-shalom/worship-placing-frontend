@@ -1,0 +1,101 @@
+.desktop-new-place {
+  padding: 24px;
+  background: #ffffff;
+  min-height: calc(100vh - 248px);
+
+  &___header {
+    margin-bottom: 20px;
+
+    &___title {
+      font-size: 30px;
+      color: #000000;
+      font-weight: 700;
+    }
+
+    &___description {
+      font-size: 14px;
+      color: #313132;
+    }
+  }
+
+  &___body {
+    display: flex;
+
+    &___left {
+      width: 270px;
+    }
+
+    &___divider {
+      height: 200px !important;
+    }
+
+    &___right {
+      margin: auto;
+    }
+  }
+
+  &___footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+  }
+}
+
+.page-title {
+  font-size: 12px;
+  color: #313132;
+}
+
+.link-string {
+  color: #000000d9 !important;
+}
+
+.status-badge {
+  text-align: center;
+  border-radius: 20px;
+  font-size: 12px;
+  width: max-content;
+  padding: 0 10px;
+  // margin: auto;
+}
+
+.todo {
+  background: #33283c;
+  border: 3px solid #f6c5ea;
+  color: #f6c5ea;
+}
+
+.in-progress {
+  background: #391b21;
+  border: 3px solid #f3b65f;
+  color: #f3b65f;
+}
+
+.complete {
+  background: #173038;
+  border: 3px solid #baee9e;
+  color: #baee9e;
+}
+
+.primary-button {
+  margin-left: 10px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.seat-num-controll {
+  display: flex;
+  justify-content: flex-end;
+
+  &___text {
+    margin-right: 10px;
+    font-weight: 600;
+  }
+
+  &___switch {
+    z-index: 1;
+  }
+}

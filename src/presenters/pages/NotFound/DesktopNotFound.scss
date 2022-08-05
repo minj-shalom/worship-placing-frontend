@@ -1,0 +1,30 @@
+.desktop-not-found {
+  padding: 24px;
+  background: #ffffff;
+  min-height: calc(100vh - 248px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &___title {
+    font-size: 40px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 55px;
+    word-break: keep-all;
+  }
+
+  &___action {
+    color: #0070c9 !important;
+    background: #ffffff;
+    border: none !important;
+    margin-top: 5px;
+    width: max-content;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}

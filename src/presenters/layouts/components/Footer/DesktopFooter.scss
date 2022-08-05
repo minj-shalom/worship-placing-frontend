@@ -1,0 +1,122 @@
+.desktop-footer {
+  padding: 24px !important;
+  min-height: 200px !important;
+  display: flex;
+  justify-content: space-between;
+
+  &___info {
+    &___title {
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    &___text {
+      color: #777777;
+      font-size: 14px;
+      margin-bottom: 3px;
+      word-break: keep-all;
+    }
+  }
+
+  &___contact {
+    margin-bottom: 24px;
+    padding: 0 20px;
+
+    &___title {
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    &___icon {
+      &___facebook {
+        width: 32px !important;
+        height: 32px !important;
+        margin-right: 3px;
+      }
+
+      &___facebook:hover {
+        content: url("../../../../../src/assets/icons/facebook-icon-hover.png");
+        width: 32px !important;
+        height: 32px !important;
+      }
+
+      &___instagram {
+        width: 32px !important;
+        height: 32px !important;
+        margin-right: 3px;
+      }
+
+      &___instagram:hover {
+        content: url("../../../../../src/assets/icons/instagram-icon-hover.png");
+        width: 32px !important;
+        height: 32px !important;
+      }
+
+      &___youtube {
+        width: 32px !important;
+        height: 32px !important;
+        margin-right: 3px;
+      }
+
+      &___youtube:hover {
+        content: url("../../../../../src/assets/icons/youtube-icon-hover.png");
+        width: 32px !important;
+        height: 32px !important;
+      }
+
+      &___kakaotalk {
+        width: 32px !important;
+        height: 32px !important;
+        margin-right: 3px;
+      }
+
+      &___kakaotalk:hover {
+        content: url("../../../../../src/assets/icons/kakaotalk-icon-hover.png");
+        width: 32px !important;
+        height: 32px !important;
+      }
+
+      &___gmail {
+        width: 32px !important;
+        height: 32px !important;
+      }
+
+      &___gmail:hover {
+        content: url("../../../../../src/assets/icons/gmail-icon-hover.png");
+        width: 32px !important;
+        height: 32px !important;
+      }
+    }
+  }
+
+  &___copyright-and-version {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &___copyright {
+      text-align: start;
+      color: #777777;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 12px;
+
+      &___title {
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 10px;
+        text-align: start;
+        color: #000000;
+      }
+    }
+
+    &___version {
+      text-align: end;
+      color: #777777;
+      font-weight: 700;
+      font-size: 14px;
+    }
+  }
+}

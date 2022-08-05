@@ -1,0 +1,82 @@
+.login-modal-button {
+  width: 48px;
+  height: 48px;
+  color: #ffffffa6;
+  font-size: 18px;
+  background: #313132;
+  border: none;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.forbidden-button {
+  color: #0070c9 !important;
+  background: #ffffff;
+  border: none !important;
+  margin-top: 5px;
+  width: max-content;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.login-modal {
+  &___login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &___notice {
+      text-align: center;
+      color: #494949;
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    &___password {
+      width: 70%;
+      display: flex;
+
+      &___input {
+        width: 100%;
+      }
+
+      &___button {
+        width: 32px;
+        padding: 0 !important;
+      }
+    }
+  }
+
+  &___logout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &___notice {
+      text-align: center;
+      color: #494949;
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    &___button {
+    }
+  }
+}
+
+.ant-menu-item {
+  padding: 0 20px;
+}

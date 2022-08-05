@@ -1,0 +1,15 @@
+{
+  "short_name": "WORSHIP PLACING",
+  "name": "WORSHIP PLACING",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "type": "image/png",
+      "sizes": "679x679"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
