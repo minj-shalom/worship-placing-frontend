@@ -15,6 +15,7 @@ WORSHIP PLACING includes following features:
 - Create a place of worship.
 - Edit the place of worship.
 - Delete the place of worship.
+- Supports responsive UI / UX according to connected devices.
 
 ## Release Note
 
