@@ -43,11 +43,19 @@ export default function LoginModal({
           <div>
             <span>(문의: </span>
             <a
-              href={`mailto:${process.env.REACT_APP_CONTACT_GMAIL}`}
+              href={`mailto:${
+                process.env.REACT_APP_CONTACT_GMAIL
+                  ? process.env.REACT_APP_CONTACT_GMAIL
+                  : "yeonsuyouth@gmail.com"
+              }`}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span>{process.env.REACT_APP_CONTACT_GMAIL}</span>
+              <span>
+                {process.env.REACT_APP_CONTACT_GMAIL
+                  ? process.env.REACT_APP_CONTACT_GMAIL
+                  : "yeonsuyouth@gmail.com"}
+              </span>
             </a>
             <span>)</span>
           </div>

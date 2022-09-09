@@ -11,7 +11,11 @@ export default function TabletNoPlace({ isAdmin }: TabletNoPlaceProps) {
     } else {
       return (
         <a
-          href={`mailto:${process.env.REACT_APP_CONTACT_GMAIL}`}
+          href={`mailto:${
+            process.env.REACT_APP_CONTACT_GMAIL
+              ? process.env.REACT_APP_CONTACT_GMAIL
+              : "yeonsuyouth@gmail.com"
+          }`}
           target="_blank"
           rel="noopener noreferrer"
         >
