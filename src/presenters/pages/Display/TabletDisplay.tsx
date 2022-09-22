@@ -16,11 +16,7 @@ export default function TabletDisplay({ isAdmin }: TabletDisplayProps) {
   const { data: result } = useGetDisplay();
 
   useEffect(() => {
-    if (result && result.worshipPlace) {
-      setWorshipPlace(result.worshipPlace);
-    } else {
-      setWorshipPlace(undefined);
-    }
+    setWorshipPlace(result);
   }, [result]);
 
   if (worshipPlace) {

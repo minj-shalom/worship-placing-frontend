@@ -1,7 +1,7 @@
 import { useQuery, UseQueryResult } from "react-query";
 import { message } from "antd";
 import { PlacesAPI } from "../adaptors/places.api";
-import { Place, WorshipPlace, WorshipPlaceList } from "../entities";
+import { Place, WorshipPlace } from "../entities";
 import { useState } from "react";
 
 export class PlacesService {
@@ -11,7 +11,7 @@ export class PlacesService {
     const result = await this.placesApi
       .getWorshipPlaceList()
       .then((response) => {
-        return response;
+        return response.data;
       })
       .catch((e) => {
         if (e.response?.status) {
@@ -28,7 +28,7 @@ export class PlacesService {
     const result = await this.placesApi
       .getWorshipPlace(id)
       .then((response) => {
-        return response;
+        return response.data;
       })
       .catch((e) => {
         if (e.response?.status) {
@@ -56,7 +56,7 @@ export class PlacesService {
         if (callback) {
           callback();
         }
-        return response;
+        return response.data;
       })
       .catch((e) => {
         if (e.response?.status) {
@@ -76,7 +76,7 @@ export class PlacesService {
       .deleteWorshipPlace(id)
       .then((response) => {
         callback();
-        return response;
+        return response.data;
       })
       .catch((e) => {
         if (e.response?.status) {
@@ -102,7 +102,7 @@ export class PlacesService {
     const result = await this.placesApi
       .checkId(id)
       .then((response) => {
-        return response;
+        return response.data;
       })
       .catch((e) => {
         if (e.response?.status) {
@@ -130,7 +130,7 @@ export class PlacesService {
           callback();
         }
         message.success("성공적으로 편집하였습니다.");
-        return response;
+        return response.data;
       })
       .catch((e) => {
         if (e.response?.status) {
@@ -156,7 +156,7 @@ export class PlacesService {
           callback();
         }
         message.success("성공적으로 삭제하였습니다.");
-        return response;
+        return response.data;
       })
       .catch((e) => {
         if (e.response?.status) {
@@ -173,7 +173,7 @@ export class PlacesService {
     const result = await this.placesApi
       .getDisplay()
       .then((response) => {
-        return response;
+        return response.data;
       })
       .catch((e) => {
         if (e.response?.status) {
@@ -190,7 +190,7 @@ export class PlacesService {
     const result = await this.placesApi
       .setDisplay(id, afterIsDisplay)
       .then((response) => {
-        if (response.afterIsDisplay) {
+        if (response.data.afterIsDisplay) {
           message.success("성공적으로 지정하였습니다.");
         } else {
           message.success("성공적으로 지정 해제하였습니다.");
@@ -212,7 +212,8 @@ export class PlacesService {
 
 export function useGetWorshipPlaceList(): UseQueryResult<
   {
-    worshipPlaceList: WorshipPlaceList;
+    count: number;
+    worshipPlaces: WorshipPlace[];
   },
   undefined
 > {
@@ -221,12 +222,9 @@ export function useGetWorshipPlaceList(): UseQueryResult<
   );
 }
 
-export function useGetWorshipPlace(id: string): UseQueryResult<
-  {
-    worshipPlace: WorshipPlace | undefined;
-  },
-  undefined
-> {
+export function useGetWorshipPlace(
+  id: string
+): UseQueryResult<WorshipPlace, undefined> {
   return useQuery("worshipPlace", () =>
     new PlacesService(new PlacesAPI()).getWorshipPlace(id)
   );
@@ -242,12 +240,7 @@ export function useCheckId(id: string) {
   return existence;
 }
 
-export function useGetDisplay(): UseQueryResult<
-  {
-    worshipPlace: WorshipPlace | undefined;
-  },
-  undefined
-> {
+export function useGetDisplay(): UseQueryResult<WorshipPlace, undefined> {
   return useQuery(
     "display-worshipPlace",
     () => new PlacesService(new PlacesAPI()).getDisplay(),

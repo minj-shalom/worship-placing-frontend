@@ -1,21 +1,36 @@
-import axios from "axios";
-import { Place, WorshipPlace, WorshipPlaceList } from "../entities";
-
-const url = `http://localhost:${process.env.REACT_APP_ENDPOINT_PORT}`;
+import { AxiosInstance, AxiosRequestConfig } from "axios";
+import { Place, WorshipPlace } from "../entities";
+import AxiosAPIAdapter from "./instance/axios";
 
 export class PlacesAPI {
+  protected instance: AxiosAPIAdapter;
+
+  constructor(
+    advancedOption?: AxiosRequestConfig,
+    extendSessionSetup?: (session: AxiosInstance) => void
+  ) {
+    this.instance = new AxiosAPIAdapter(
+      {
+        baseURL: `${process.env.REACT_APP_REST_API_PROTOCOL}://${process.env.REACT_APP_REST_API_URL}/api`,
+        ...advancedOption,
+      },
+      extendSessionSetup
+    );
+  }
+
   async getWorshipPlaceList() {
-    const result = await axios.get<{
-      worshipPlaceList: WorshipPlaceList;
-    }>(`${url}/worship-place`);
+    const result = await this.instance.get<{
+      count: number;
+      worshipPlaces: WorshipPlace[];
+    }>(`/worship-place`);
 
     return result.data;
   }
 
   async getWorshipPlace(id: string) {
-    const result = await axios.get<{
-      worshipPlace: WorshipPlace | undefined;
-    }>(`${url}/worship-place/${id}`);
+    const result = await this.instance.get<WorshipPlace>(
+      `/worship-place/${id}`
+    );
 
     return result.data;
   }
@@ -28,9 +43,7 @@ export class PlacesAPI {
     title: string,
     description?: string
   ) {
-    const result = await axios.post<{
-      worshipPlace: WorshipPlace;
-    }>(`${url}/worship-place`, {
+    const result = await this.instance.post<WorshipPlace>(`/worship-place`, {
       places,
       row,
       col,
@@ -42,21 +55,21 @@ export class PlacesAPI {
   }
 
   async deleteAllWorshipPlace() {
-    const result = await axios.delete(`${url}/worship-place`);
+    const result = await this.instance.delete(`/worship-place`);
     return result.data;
   }
 
   async deleteWorshipPlace(id: string) {
-    const result = await axios.delete<{
+    const result = await this.instance.delete<{
       id: string;
-    }>(`${url}/worship-place/${id}`);
+    }>(`/worship-place/${id}`);
     return result.data;
   }
 
   async checkId(id: string) {
-    const result = await axios.get<{
+    const result = await this.instance.get<{
       result: boolean;
-    }>(`${url}/check-id/${id}`);
+    }>(`/check-id/${id}`);
     return result.data;
   }
 
@@ -67,9 +80,7 @@ export class PlacesAPI {
     name: string,
     cell: string
   ) {
-    const result = await axios.post<{
-      place: Place;
-    }>(`${url}/place/${id}`, {
+    const result = await this.instance.post<Place>(`/place/${id}`, {
       id,
       row,
       col,
@@ -81,9 +92,7 @@ export class PlacesAPI {
   }
 
   async deletePlace(id: string, row: string, col: number) {
-    const result = await axios.put<{
-      place: Place;
-    }>(`${url}/place/${id}`, {
+    const result = await this.instance.put<Place>(`/place/${id}`, {
       id,
       row,
       col,
@@ -93,18 +102,16 @@ export class PlacesAPI {
   }
 
   async getDisplay() {
-    const result = await axios.get<{
-      worshipPlace: WorshipPlace | undefined;
-    }>(`${url}/display`);
+    const result = await this.instance.get<WorshipPlace>(`/display`);
 
     return result.data;
   }
 
   async setDisplay(id: string, afterIsDisplay: boolean) {
-    const result = await axios.put<{
+    const result = await this.instance.put<{
       id: string;
       afterIsDisplay: boolean;
-    }>(`${url}/display`, {
+    }>(`/display`, {
       id,
       afterIsDisplay,
     });

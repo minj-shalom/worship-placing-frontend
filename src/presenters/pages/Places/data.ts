@@ -1,4 +1,4 @@
-import { Place, WorshipPlace, WorshipPlaceList } from "../../../entities";
+import { Place, WorshipPlace } from "../../../entities";
 
 export const placesData: Place[] = [
   {
@@ -297,35 +297,6 @@ export const worshipPlaceData3: WorshipPlace = {
   title: "열정 가득한 유스 예배!",
   description: "어서오세요! 환영합니다!",
   isDisplay: false,
-  createdAt: "2022-06-02T22:42:49.896Z",
-  updatedAt: "2022-06-03T22:42:49.896Z",
-};
-
-export const worshipPlaceListData: WorshipPlaceList = {
-  count: 21,
-  worshipPlaces: [
-    worshipPlaceData1,
-    worshipPlaceData2,
-    worshipPlaceData3,
-    worshipPlaceData1,
-    worshipPlaceData2,
-    worshipPlaceData3,
-    worshipPlaceData1,
-    worshipPlaceData2,
-    worshipPlaceData3,
-    worshipPlaceData1,
-    worshipPlaceData2,
-    worshipPlaceData3,
-    worshipPlaceData1,
-    worshipPlaceData2,
-    worshipPlaceData3,
-    worshipPlaceData1,
-    worshipPlaceData2,
-    worshipPlaceData3,
-    worshipPlaceData1,
-    worshipPlaceData2,
-    worshipPlaceData3,
-  ],
   createdAt: "2022-06-02T22:42:49.896Z",
   updatedAt: "2022-06-03T22:42:49.896Z",
 };

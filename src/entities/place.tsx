@@ -22,13 +22,6 @@ export interface WorshipPlace {
   updatedAt: string;
 }
 
-export interface WorshipPlaceList {
-  count: number;
-  worshipPlaces: WorshipPlace[];
-  createdAt: string;
-  updatedAt: string;
-}
-
 export interface WorshipPlaceTableColumns {
   key: number;
   id: string;

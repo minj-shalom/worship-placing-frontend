@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 import { PlacesAPI } from "../../../adaptors/places.api";
 import {
   Place,
-  WorshipPlaceList,
+  WorshipPlace,
   WorshipPlaceTableColumns,
 } from "../../../entities";
 import {
@@ -43,15 +43,15 @@ const setWorshipPlace = async (
 
 export default function TabletPlaces() {
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
-  const [serverData, setServerData] = useState<WorshipPlaceList>();
+  const [serverData, setServerData] = useState<WorshipPlace[]>();
   const hasSelected = selectedRowKeys.length > 0;
 
   const { data: result, refetch } = useGetWorshipPlaceList();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (result && result?.worshipPlaceList) {
-      setServerData(result?.worshipPlaceList);
+    if (result && result?.worshipPlaces) {
+      setServerData(result?.worshipPlaces);
     }
   }, [result]);
 
@@ -200,7 +200,7 @@ export default function TabletPlaces() {
   ];
 
   const data: WorshipPlaceTableColumns[] = serverData
-    ? serverData.worshipPlaces.map((item, index) => {
+    ? serverData.map((item, index) => {
         const key: number = index;
         const id: string = item.id;
         const date: string = item.date;
