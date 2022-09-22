@@ -3,43 +3,13 @@ import Table, { ColumnsType, TableProps } from "antd/lib/table";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { PlacesAPI } from "../../../adaptors/places.api";
-import {
-  Place,
-  WorshipPlace,
-  WorshipPlaceTableColumns,
-} from "../../../entities";
-import {
-  PlacesService,
-  useGetWorshipPlaceList,
-} from "../../../interactors/places.service";
+import { WorshipPlace, WorshipPlaceTableColumns } from "../../../entities";
+import { useGetWorshipPlaceList } from "../../../interactors/places.service";
+import { CreateMockDataButton } from "../../components/CreateMockDataButton";
 import { DisplayButton } from "../../components/DisplayButton/DisplayButton";
 import { PlacesDeleteModal } from "../../components/PlacesDeleteModal";
-import { data1, data2, data3, data4, data5 } from "../../mock-data";
 import { getWorshipPlaceData } from "../../utils";
 import "./DesktopPlaces.scss";
-
-const placesService = new PlacesService(new PlacesAPI());
-
-const setWorshipPlace = async (
-  places: Place[],
-  row: string,
-  col: number,
-  date: string,
-  title: string,
-  description?: string,
-  callback?: () => void
-) => {
-  await placesService.setWorshipPlace(
-    places,
-    row,
-    col,
-    date,
-    title,
-    description,
-    callback
-  );
-};
 
 export default function DesktopPlaces() {
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
@@ -54,54 +24,6 @@ export default function DesktopPlaces() {
       setServerData(result?.worshipPlaces);
     }
   }, [result]);
-
-  const createMockData = () => {
-    setWorshipPlace(
-      data1.places,
-      data1.row,
-      data1.col,
-      data1.date,
-      data1.title,
-      data1.description,
-      refetch
-    );
-    setWorshipPlace(
-      data2.places,
-      data2.row,
-      data2.col,
-      data2.date,
-      data2.title,
-      data2.description,
-      refetch
-    );
-    setWorshipPlace(
-      data3.places,
-      data3.row,
-      data3.col,
-      data3.date,
-      data3.title,
-      data3.description,
-      refetch
-    );
-    setWorshipPlace(
-      data4.places,
-      data4.row,
-      data4.col,
-      data4.date,
-      data4.title,
-      data4.description,
-      refetch
-    );
-    setWorshipPlace(
-      data5.places,
-      data5.row,
-      data5.col,
-      data5.date,
-      data5.title,
-      data5.description,
-      refetch
-    );
-  };
 
   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
     setSelectedRowKeys(newSelectedRowKeys);
@@ -328,11 +250,7 @@ export default function DesktopPlaces() {
           </div>
         </div>
         <div className="desktop-places___header___right">
-          {process.env.REACT_APP_USE_CREATE_MOCKUP && (
-            <Button className="create-button" onClick={() => createMockData()}>
-              create mock data
-            </Button>
-          )}
+          <CreateMockDataButton type="desktop" callback={refetch} />
           <Button
             className="create-button"
             onClick={() => (window.location.href = "/admin/new")}

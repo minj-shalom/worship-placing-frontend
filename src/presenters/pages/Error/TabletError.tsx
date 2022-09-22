@@ -10,7 +10,11 @@ const TabletError = () => {
       </div>
       <a
         className="tablet-error___action"
-        href={`mailto:${process.env.REACT_APP_CONTACT_GMAIL}`}
+        href={`mailto:${
+          process.env.REACT_APP_CONTACT_GMAIL
+            ? process.env.REACT_APP_CONTACT_GMAIL
+            : "yeonsuyouth@gmail.com"
+        }`}
         target="_blank"
         rel="noopener noreferrer"
       >
