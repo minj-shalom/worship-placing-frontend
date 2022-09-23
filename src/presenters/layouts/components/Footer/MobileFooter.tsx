@@ -5,13 +5,15 @@ import instagram from "../../../../../src/assets/icons/instagram-icon.png";
 import youtube from "../../../../../src/assets/icons/youtube-icon.png";
 import kakaotalk from "../../../../../src/assets/icons/kakaotalk-icon.png";
 import gmail from "../../../../../src/assets/icons/gmail-icon.png";
+import { useInfo } from "../../../../interactors/places.service";
 
 export default function MobileFooter() {
+  const { data } = useInfo();
   const { Footer } = Layout;
   const date = new Date();
   const year = date.getFullYear();
-  const version = process.env.REACT_APP_VERSION
-    ? `WORSHIP PLACING v${process.env.REACT_APP_VERSION}`
+  const version = data?.version
+    ? `WORSHIP PLACING v${data?.version}`
     : "WORSHIP PLACING";
 
   return (

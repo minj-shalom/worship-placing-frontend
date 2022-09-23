@@ -6,6 +6,18 @@ import { Place, WorshipPlace } from "../entities";
 export class PlacesService {
   constructor(private placesApi: PlacesAPI) {}
 
+  async info() {
+    const result = await this.placesApi
+      .info()
+      .then((response) => {
+        return response.data;
+      })
+      .catch((e) => {
+        return undefined;
+      });
+    return result;
+  }
+
   async getWorshipPlaceList() {
     const result = await this.placesApi
       .getWorshipPlaceList()
@@ -207,6 +219,15 @@ export class PlacesService {
       });
     return result;
   }
+}
+
+export function useInfo(): UseQueryResult<
+  {
+    version: string;
+  },
+  undefined
+> {
+  return useQuery("info", () => new PlacesService(new PlacesAPI()).info());
 }
 
 export function useGetWorshipPlaceList(): UseQueryResult<

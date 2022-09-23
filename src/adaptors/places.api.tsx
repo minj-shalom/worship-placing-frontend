@@ -18,6 +18,14 @@ export class PlacesAPI {
     );
   }
 
+  async info() {
+    const result = await this.instance.get<{
+      version: string;
+    }>(`/info`);
+
+    return result.data;
+  }
+
   async getWorshipPlaceList() {
     const result = await this.instance.get<{
       count: number;
