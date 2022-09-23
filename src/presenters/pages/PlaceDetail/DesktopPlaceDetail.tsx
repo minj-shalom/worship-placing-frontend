@@ -1,5 +1,6 @@
 import { useCheckId } from "../../../interactors/places.service";
 import { DesktopError } from "../Error";
+import { DesktopLoading } from "../Loading";
 import { DesktopNotFound } from "../NotFound";
 import PlaceDetail from "./components/PlaceDetail";
 import "./DesktopPlaceDetail.scss";
@@ -18,23 +19,15 @@ export default function DesktopPlaceDetail({
   exitFullScreen,
 }: DesktopPlaceDetailProps) {
   const id = window.location.pathname.substring(7);
-  const existence = useCheckId(id);
 
-  if (existence) {
-    return (
-      <PlaceDetail
-        id={id}
-        isFullScreen={isFullScreen}
-        userAgent="desktop"
-        requestFullScreen={requestFullScreen}
-        exitFullScreen={exitFullScreen}
-      />
-    );
-  } else {
-    if (existence === undefined) {
-      return <DesktopError />;
-    } else {
-      return <DesktopNotFound isAdmin={isAdmin} />;
-    }
-  }
+  return (
+    <PlaceDetail
+      isAdmin={isAdmin}
+      id={id}
+      isFullScreen={isFullScreen}
+      userAgent="desktop"
+      requestFullScreen={requestFullScreen}
+      exitFullScreen={exitFullScreen}
+    />
+  );
 }

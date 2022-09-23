@@ -18,23 +18,15 @@ export default function MobilePlaceDetail({
   exitFullScreen,
 }: MobilePlaceDetailProps) {
   const id = window.location.pathname.substring(7);
-  const existence = useCheckId(id);
 
-  if (existence) {
-    return (
-      <PlaceDetail
-        id={id}
-        isFullScreen={isFullScreen}
-        userAgent="mobile"
-        requestFullScreen={requestFullScreen}
-        exitFullScreen={exitFullScreen}
-      />
-    );
-  } else {
-    if (existence === undefined) {
-      return <MobileError />;
-    } else {
-      return <MobileNotFound isAdmin={isAdmin} />;
-    }
-  }
+  return (
+    <PlaceDetail
+      isAdmin={isAdmin}
+      id={id}
+      isFullScreen={isFullScreen}
+      userAgent="mobile"
+      requestFullScreen={requestFullScreen}
+      exitFullScreen={exitFullScreen}
+    />
+  );
 }

@@ -124,7 +124,7 @@ export class PlacesService {
     callback?: () => void
   ) {
     const result = await this.placesApi
-      .setPlace(id, row, col, name, cell)
+      .setPlace(String(id), row, col, name, cell)
       .then((response) => {
         if (callback) {
           callback();
@@ -150,7 +150,7 @@ export class PlacesService {
     callback?: () => void
   ) {
     const result = await this.placesApi
-      .deletePlace(id, row, col)
+      .deletePlace(String(id), row, col)
       .then((response) => {
         if (callback) {
           callback();
@@ -188,7 +188,7 @@ export class PlacesService {
 
   async setDisplay(id: string, afterIsDisplay: boolean, callback: () => void) {
     const result = await this.placesApi
-      .setDisplay(id, afterIsDisplay)
+      .setDisplay(String(id), afterIsDisplay)
       .then((response) => {
         if (response.data.afterIsDisplay) {
           message.success("성공적으로 지정하였습니다.");
@@ -230,14 +230,10 @@ export function useGetWorshipPlace(
   );
 }
 
-export function useCheckId(id: string) {
-  const [existence, setExistence] = useState<boolean | undefined>(undefined);
-  new PlacesService(new PlacesAPI()).checkId(id).then((response) => {
-    if (response) {
-      setExistence(response.result);
-    }
-  });
-  return existence;
+export function useCheckId(id: string): UseQueryResult<boolean, undefined> {
+  return useQuery("check-id", () =>
+    new PlacesService(new PlacesAPI()).checkId(id)
+  );
 }
 
 export function useGetDisplay(): UseQueryResult<WorshipPlace, undefined> {

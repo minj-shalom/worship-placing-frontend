@@ -20,10 +20,11 @@ export default function TabletPlaces() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    refetch();
     if (result && result?.worshipPlaces) {
       setServerData(result?.worshipPlaces);
     }
-  }, [result]);
+  }, [result, refetch]);
 
   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
     setSelectedRowKeys(newSelectedRowKeys);
