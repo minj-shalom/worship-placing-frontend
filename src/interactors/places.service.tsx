@@ -2,7 +2,6 @@ import { useQuery, UseQueryResult } from "react-query";
 import { message } from "antd";
 import { PlacesAPI } from "../adaptors/places.api";
 import { Place, WorshipPlace } from "../entities";
-import { useState } from "react";
 
 export class PlacesService {
   constructor(private placesApi: PlacesAPI) {}
