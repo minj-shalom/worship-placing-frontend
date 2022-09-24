@@ -1,6 +1,6 @@
 # WORSHIP PLACING 🙏
 
-It is a worship space reservation platform created by the youth of a Korean church that is serious about worship. This service was created using React and AWS Amplify. Developed with ❤️ by [youthforever](https://www.instagram.com/yeonsu_youth/) and [minj_shalom](https://github.com/minj-shalom). If you love our project please star ⭐️ our repo!
+It is a worship space reservation platform created by the youth of a Korean church that is serious about worship. This service was created using React. Developed with ❤️ by [youthforever](https://www.instagram.com/yeonsu_youth/) and [minj_shalom](https://github.com/minj-shalom). If you love our project please star ⭐️ our repo!
 
 [View Demo](http://worship-placing.org/) | [Download](https://github.com/minj-shalom/worship-placing-frontend/archive/refs/heads/master.zip) | [More Repositories](https://github.com/minj-shalom?tab=repositories)
 
@@ -19,7 +19,7 @@ WORSHIP PLACING includes following features:
 
 ## Release Note
 
-| version |    date    |     change history.    |
+| version |    date    |     change history     |
 | :-----: | :--------: | ---------------------- |
 | v1.0.0  | 2022.08.06 | First regular release. |
 | v0.1.0  | 2022.08.06 | Implemented UI.        |
