@@ -2,9 +2,9 @@
 
 It is a worship space reservation platform created by the youth of a Korean church that is serious about worship. This service was created using React and AWS Amplify. Developed with ❤️ by [youthforever](https://www.instagram.com/yeonsu_youth/) and [minj_shalom](https://github.com/minj-shalom). If you love our project please star ⭐️ our repo!
 
-[Download](https://github.com/minj-shalom/worship-placing-frontend/archive/refs/heads/master.zip) | [More Repositories](https://github.com/minj-shalom?tab=repositories)
+[View Demo](http://worship-placing.org/) | [Download](https://github.com/minj-shalom/worship-placing-frontend/archive/refs/heads/master.zip) | [More Repositories](https://github.com/minj-shalom?tab=repositories)
 
-[![image](https://user-images.githubusercontent.com/63629356/183102128-dfdab8f3-2027-4e6e-be14-c6b772700b0b.png)](https://github.com/minj-shalom/worship-placing-frontend)
+[![image](https://user-images.githubusercontent.com/63629356/183102128-dfdab8f3-2027-4e6e-be14-c6b772700b0b.png)](http://worship-placing.org/)
 
 ## Features
 
@@ -19,9 +19,10 @@ WORSHIP PLACING includes following features:
 
 ## Release Note
 
-| version |    date    | change history  |
-| :-----: | :--------: | --------------- |
-| v0.1.0  | 2022.08.06 | Implemented UI. |
+| version |    date    |     change history.    |
+| :-----: | :--------: | ---------------------- |
+| v1.0.0  | 2022.08.06 | First regular release. |
+| v0.1.0  | 2022.08.06 | Implemented UI.        |
 
 ## Installation
 
@@ -46,10 +47,6 @@ npm install
 ```shell
 yarn
 ```
-
-## Amplify Installation, Configure, and Init
-
-To use amplify's functions normally, you need to install amplify, set up the environment, and initialize it. Please refer to [the following post](https://velog.io/@minj_shalom/aws-amplify-0) for more details.
 
 ## Quick start
 
@@ -80,4 +77,4 @@ WORSHIP PLACING version is [MIT](https://github.com/minj-shalom/worship-placing-
 
 ## Version
 
-WORSHIP PLACING v0.1.0
+WORSHIP PLACING v1.0.0
