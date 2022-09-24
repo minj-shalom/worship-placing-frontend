@@ -21,7 +21,7 @@ WORSHIP PLACING includes following features:
 
 | version |    date    |     change history     |
 | :-----: | :--------: | ---------------------- |
-| v1.0.0  | 2022.08.06 | First regular release. |
+| v1.0.0  | 2022.09.25 | First regular release. |
 | v0.1.0  | 2022.08.06 | Implemented UI.        |
 
 ## Installation
