@@ -21,6 +21,7 @@ WORSHIP PLACING includes following features:
 
 | version |    date    |     change history     |
 | :-----: | :--------: | ---------------------- |
+| v1.0.1  | 2023.04.08 | Edit cell list.        |
 | v1.0.0  | 2022.09.25 | First regular release. |
 | v0.1.0  | 2022.08.06 | Implemented UI.        |
 
@@ -77,4 +78,4 @@ WORSHIP PLACING version is [MIT](https://github.com/minj-shalom/worship-placing-
 
 ## Version
 
-WORSHIP PLACING v1.0.0
+WORSHIP PLACING v1.0.1
