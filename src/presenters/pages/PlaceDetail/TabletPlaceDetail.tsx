@@ -1,6 +1,3 @@
-import { useCheckId } from "../../../interactors/places.service";
-import { TabletError } from "../Error";
-import { TabletNotFound } from "../NotFound";
 import PlaceDetail from "./components/PlaceDetail";
 import "./TabletPlaceDetail.scss";
 

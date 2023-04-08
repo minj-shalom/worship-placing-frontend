@@ -1,7 +1,3 @@
-import { useCheckId } from "../../../interactors/places.service";
-import { DesktopError } from "../Error";
-import { DesktopLoading } from "../Loading";
-import { DesktopNotFound } from "../NotFound";
 import PlaceDetail from "./components/PlaceDetail";
 import "./DesktopPlaceDetail.scss";
 

@@ -51,7 +51,7 @@ export default function DesktopDisplayEdit({
   const { TabPane } = Tabs;
   const { Option } = Select;
   const standard = worshipPlaceData.col / 2;
-  const cell = ["MIH셀", "비전셀", "일꾼셀", "존중셀"];
+  const cell = ["MIH셀", "비전셀", "순종셀", "존중셀"];
 
   const setDeleteTab = (row: string, col: number) => {
     const seat = places.filter((item) => {

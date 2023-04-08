@@ -1,6 +1,3 @@
-import { useCheckId } from "../../../interactors/places.service";
-import { MobileError } from "../Error";
-import { MobileNotFound } from "../NotFound";
 import PlaceDetail from "./components/PlaceDetail";
 import "./MobilePlaceDetail.scss";
 
